@@ -1,0 +1,77 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\begin{document}
+\begin{enumerate}
+\item[1.] Oletetaan, että $Y_1, \ldots, Y_n \sim \text{Poisson}(\lambda), \lambda > 0$, ovat riippumattomia. Osoita, että satunnaisvektori $\mathbf{Y} = (Y_1, \ldots, Y_n)$ yhteispistetodennäköisyysfunktiolla on esitys
+$$
+f(\mathbf{y}; \lambda) = e^{-n\lambda} \frac{\lambda^{t(\mathbf{y})}}{\prod_{i = 1}^n y_i!},
+$$
+missä 
+$$
+t(\mathbf{y}) = \sum_{i = 1}^n y_i.
+$$
+\\
+\textit{Ratkaisu:} Poisson$(\lambda)$-jakautuneen satunnaismuuttujan $Y_i$ pistetodennäköisyysfunktio on 
+$$
+f(y_i; \lambda) = \mathbb{P}(Y_i = y_i) = e^{-\lambda} \frac{\lambda^{y_i}}{y_i!}, y_i = 0, 1, 2, \ldots.
+$$
+Koska satunnaisfmuuttujat $Y_1, \ldots, Y_n$ ovat riippumattomia, niiden yhteispistetodennäköisyysfunktio saadaan tulona
+$$
+\begin{aligned}
+f(\mathbf{y}; \lambda) &= \prod_{i = 1}^n f_Y(y_i, \lambda) \\
+    &= \prod_{i = 1}^n e^{-\lambda} \frac{\lambda^{y_i}}{y_i!} \\
+    &= \prod_{i = 1}^n e^{-\lambda} \frac{\prod_{i = 1}^n \lambda^{y_i}}{\prod_{i = 1}^n y_i!} \\
+    &= e^{-n\lambda} \frac{\lambda^{\sum_{i = 1}^n y_i}}{\prod_{i = 1}^n y_i!}  \\
+    &= e^{-n\lambda} \frac{\lambda^{t(\mathbf{y})}}{\prod_{i = 1}^n y_i!},
+\end{aligned}
+$$
+missä $t(\mathbf{y}) = \sum_{i = 1}^n y_i$ ja $y_i = 0, 1, 2, \ldots,$ kaikilla $i = 1, \ldots, n,$ eli yhteispistetodennäköisyysfunktio on haluttua muotoa.
+
+\item[2.]
+Olkooon $\mathbf{Y} = (5, 6, 2, 5)$ ja, siten,
+$$
+f(\mathbf{y}; \lambda) = e^{-4\lambda} \frac{\lambda^{18}}{5! \cdot 6! \cdot 2! \cdot 5!}.
+$$
+
+\item[4.] Näytä, että $\mathbb{E}(X - a)^2 = \text{Var}(X) + (\mu - a)^2 = \text{Var}(X) + (\mathbb{E}(X) - a)^2$.
+\\
+\textit{Ratkaisu}: 
+$$
+\begin{aligned}
+\mathbb{E}(X - a)^2 &= \mathbb{E}(X - \mu + \mu - a)^2 \\
+    &= \mathbb{E}((X - \mu) + (\mu - a))^2 \\
+    &= \mathbb{E}((X - \mu)^2 + 2(X - \mu)(\mu - a) + (\mu - a)^2) \\
+    &= \mathbb{E}(X - \mu)^2 + 2(\mu - a)\mathbb{E}(X - \mu) + \mathbb{E}(\mu - a)^2 \\
+    &= \mathbb{E}(X - \mathbb{E}X)^2 + 2(\mu -a)(\mathbb{E}X - \mathbb{E}X) + (\mu - a)^2 \\
+    &= \text{Var}(X) + (\mu - a)^2.
+\end{aligned}
+$$
+
+\item[5.]  Olkoot $y_1, \ldots, y_n \in \mathbb{R}$, ja olkoon $\bar{y} = \frac{1}{n} \sum_{i = 1}^n y_i$ niiden aritmeettinen ka. Näytä, että mille tahansa reaaliluvulle $a$ pätee
+$$
+\sum_{i = 1}^n (y_i - a)^2 = \sum_{i = 1}^n (y_i - \bar{y})^2 + n(\bar{y} - a)^2.
+$$
+\\
+\textit{Ratkaisu}:
+$$
+\begin{aligned}
+\sum_{i = 1}^n (y_i - a)^2 &= \sum_{i = 1}^n (y_i - \bar{y} + \bar{y} - a)^2 \\
+    &= \sum_{i = 1}^n ((y_i - \bar{y}) + (\bar{y} - a))^2 \\
+    &= \sum_{i = 1}^n  ((y_i - \bar{y})^2 + 2 (y_i - \bar{y})(\bar{y} - a) + (\bar{y} - a)^2) \\
+    &= \sum_{i = 1}^n (y_i - \bar{y})^2 + 2(\bar{y} - a)\sum_{i = 1}^n(y_i - \bar{y}) + \sum_{i = 1}^n (\bar{y} - a)^2 \\
+    &= \sum_{i = 1}^n (y_i - \bar{y})^2 + 2(\bar{y} - a)\sum_{i = 1}^n(y_i - \bar{y}) + n(\bar{y} - a)^2.
+\end{aligned}
+$$
+Nyt, 
+$$
+\sum_{i = 1}^n (y_i -\bar{y}) = \sum_{i = 1}^n y_ii - \sum_{i = 1}^n \bar{y} = \sum_{i = 1}^n y_i - n\bar{y}. 
+$$
+Nyt,
+$$
+\sum_{i = 1}^n y_i - n \frac{1}{n} \sum_{i = 1}^n y_i = \sum_{i = 1}^n y_i - \sum_{i = 1}^n y_i = 0.
+$$
+\end{enumerate}
+\end{document}
