@@ -41,11 +41,11 @@ $$
 \textit{Ratkaisu}: 
 $$
 \begin{aligned}
-\mathbb{E}(X - a)^2 &= \mathbb{E}(X - \mu + \mu - a)^2 \\
-    &= \mathbb{E}((X - \mu) + (\mu - a))^2 \\
-    &= \mathbb{E}((X - \mu)^2 + 2(X - \mu)(\mu - a) + (\mu - a)^2) \\
-    &= \mathbb{E}(X - \mu)^2 + 2(\mu - a)\mathbb{E}(X - \mu) + \mathbb{E}(\mu - a)^2 \\
-    &= \mathbb{E}(X - \mathbb{E}X)^2 + 2(\mu -a)(\mathbb{E}X - \mathbb{E}X) + (\mu - a)^2 \\
+\mathbb{E}[(X - a)^2] &= \mathbb{E}[(X - \mu + \mu - a)^2] \\
+    &= \mathbb{E}[((X - \mu) + (\mu - a))^2] \\
+    &= \mathbb{E}[(X - \mu)^2 + 2(X - \mu)(\mu - a) + (\mu - a)^2] \\
+    &= \mathbb{E}[(X - \mu)^2] + 2(\mu - a)\mathbb{E}[X - \mu] + \mathbb{E}[(\mu - a)^2] \\
+    &= \mathbb{E}[(X - \mathbb{E}[X])^2] + 2(\mu -a)(\mathbb{E}[X] - \mathbb{E}[X]) + (\mu - a)^2 \\
     &= \text{Var}(X) + (\mu - a)^2.
 \end{aligned}
 $$
