@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+\title{Tehtävät 2}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item[1.]
+\begin{enumerate}
+\item[(a)] Koska $Y_i \sim \text{Exp}(1/\mu)$, niin tämän tiheysfunktio on 
+$$
+f_{Y_i}(y_i; \mu) = \frac{1}{\mu} \exp(-\frac{1}{\mu} y_i),
+$$
+kun $y_i > 0$. Koska havainnot ovar riippumattomia, niin tilastollisen mallin lauseke eli yhteistiheysfunktio saadaan tulona
+$$
+\begin{aligned}
+f(\textbf{y}; \mu) &= \prod_{i = 1}^n f_{Y_i}(y_i; \mu) \\
+    &= \prod_{i = 1}^n \frac{1}{n} \exp(-\frac{1}{\mu} y_i) \\
+    &= \frac{1}{\mu^n} \exp\Bigg( \sum_{i = 1}^n y_i \Bigg) \\
+    &= \mu^{-n} \exp\Bigg( -\frac{1}{\mu}n\bar{y} \Bigg),
+\end{aligned}
+$$
+kun $y_i > 0$ kaikilla $i$, missä 
+$$
+\bar{y} = \frac{1}{n} \sum_{i = 1}^n y_i.
+$$
+\item[(b)] Yhteistiheysfunktiosta saadaan suoraan aineistoa $\textbf{y}$ vastaava uskottavuusfunktio
+$$
+L(\mu; \textbf{y}) = \mu^{-1} \exp\Bigg( -\frac{1}{\mu} n \bar{y} \Bigg).
+$$
+Log-uskottavuusfunktio on tällöin
+$$
+\begin{aligned}
+\ell(\mu; \textbf{y}) &= \log(L(\mu; \textbf{y}) \\
+    &= \log \Bigg( \mu^{-n} \exp \bigg( -\frac{1}{\mu} n \bar{y} \bigg) \Bigg) \\
+    &= -n \log(\mu) - \frac{1}{\mu} n\bar{y}.
+\end{aligned}
+$$
+
+\end{enumerate}
+\item[2.] b
+\item[3.] x
+\item[4.] c
+\item[5.] d
+\end{enumerate}
+\end{document}
