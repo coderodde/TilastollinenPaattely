@@ -41,8 +41,65 @@ $$
 $$
 
 \end{enumerate}
-\item[2.] b
-\item[3.] x
+\item[2.] 
+\begin{enumerate}
+\item[(a)] Log-uskottavuusfunktion derivaatta on
+$$
+\ell^\prime(\mu) = -n \frac{1}{\mu} + \frac{1}{\mu^2} n\bar{y} = \frac{n}{\mu^2}(-\mu + \bar{y}).
+$$
+Huomataan, että
+$$
+\begin{array}{lll}
+& \ell^\prime &= 0 \\
+\Leftrightarrow & -\mu + \bar{y} &= 0 \\
+\Leftrightarrow & \mu &= \bar{y}.
+\end{array}
+$$
+Koska lisäksi huomataan, että
+$$
+\ell^\prime(\mu) = \frac{n}{\mu^2}(-\mu + \bar{y}) > \frac{n}{\mu^2}(-\bar{y} + \bar{y}) = 0
+$$
+kaikilla $\mu < \bar{y}$ ja
+$$
+\ell^\prime(\mu) = \frac{n}{\mu^2}(-\mu + \bar{y}) < \frac{n}{\mu^2}(-\bar{y} + \bar{y}) = 0
+$$
+kaikilla $\mu > \bar{y}$, niin $\bar{y}$ on funktion $\ell$ (ja siten myös uskottavuusfunktion $L$) maksimikohta.
+Siis su-estimaatti on
+$$
+\hat{\mu} = \bar{y}
+$$
+ja su-estimaattori on 
+$$
+\hat{\mu}(\textbf{Y}) = \bar{Y}.
+$$
+\item[(b)] Aineistoa $\textbf{y} = (2,25, 8,40, 5,10, 11,85, 3,30, 8,10)$ vastaavaksi su-estimaatiksi saadaan
+$$
+\hat{\mu} = \bar{y} = \frac{1}{6}\sum_{i = 1}^6 y_i = \frac{1}{6}(2,25 + 8,40 + 5,10 + 11,85 + 3,30 + 8,10) = 6,5.
+$$
+Jos $Y_i \sim \text{Exp}(1/\mu)$, niin $\mathbb{E}[Y_i] = \mu$. Täten saadun su-estimaatin perusteella voidaan päätellä, että koiraihmisten väliajan noudattaman eksponentijakauman odotusarvo on luultavasti suunnilleen suuruusluokkaa 6,5. Aineston perusteella 6,5 on uskottavin su-estimaatin arvo, joten 3 ei ole kovin uskottava, mutta se on kuitenkin arvo.
+\end{enumerate}
+\item[3.] 
+\begin{enumerate}
+\item[(a)] Nyt odotusarvon lineaarisuuden nojalla su-estimaattorin $\hat{\mu}(\textbf{Y}) = \bar{Y}$ odotusarvoksi saadaan
+$$
+\mathbb{E}_\mu[\hat{\mu}(\textbf{Y})] = \mathbb{E}[\bar{Y}] = \mathbb{E}_\mu[\frac{1}{n} \Bigg( \sum_{i = 1}^n Y_i \Bigg) = \frac{1}{n} \sum_{i = 1}^n \mathbb{E}_\mu[Y_i] = \frac{1}{n} \sum_{i = 1}^n \mu = \frac{1}{n}n\mu = \mu.
+$$
+Harhattomuuden Määritelmän 3.4 nojalla nähdään, että SU-estimaattori on harhaton, sillä määritelmä sanoo, ettää parametring $\theta$ estimaattori $\hat{\theta}(\textbf{Y})$ on harhaton \textit{(engl. biased)}, mikäli estimaattorin odotusarvo on sama kuin parametrin todellinen arvo, eli
+$$
+\mathbb{E}_\mu[\hat{\theta}(\textbf{Y})] = \theta, \text{ kaikilla } \theta.
+$$
+\item[(b)] Varianssin laskemisessa on käytetty tietoa lineaarimuunnoksen varianssista sekä riippumattomien satunnaismuuttujien $Y_1, \ldots, Y_n$ summan varianssista. Su-estimaattorin $\hat{\mu}(\textbf{Y}) = \bar{Y}$ varianssiksi saadaan siten
+$$
+\begin{aligned}
+\text{Var}_\mu\hat{\mu}(\textbf{Y}) &= \text{Var}_\mu(\bar{Y}) \\
+    &= \text{Var}_\mu \Bigg( \frac{1}{n} \sum_{i = 1}^n Y_i \Bigg) \\
+    &= \frac{1}{n^2} \text{Var}_\mu\Bigg( \sum_{i=1}^n Y_i \Bigg) \\
+    &= \frac{1}{n^2} \sum_{i = 1}^n \text{Var}_\mu(Y_i) \\
+    &= \frac{1}{n^2}n\mu^2 \\
+    &= \frac{1}{n} \mu^2. 
+\end{aligned}
+$$
+\end{enumerate}
 \item[4.] c
 \item[5.] d
 \end{enumerate}
