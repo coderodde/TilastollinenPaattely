@@ -147,8 +147,33 @@ joten piste $\bar{y}$ on uskottavuusfunktion globaali maksimikohta, sillä täst
 \end{enumerate}
 \item[5.] 
 \begin{enumerate}
-\item[(a)]
-\item[(b)]
+\item[(a)] Tiedetään, että $\hat{\lambda}(\textbf{y}) = \bar{y}$ ja $\hat{\lambda}(\textbf{Y}) = \bar{Y}$.
+Tiedetään, että jos $X \sim \text{Poisson}(\lambda)$, niin $\mathbb{E}[X] = \text{Var}(X) = \lambda.$ SU-estimaattorin $\hat{\lambda}(\textbf{Y}) = \bar{Y}$ odotusarvoksi saadaan
+$$
+\mathbb{E}_\lambda[\hat{\lambda}(\textbf{Y})] = \mathbb{E}[\bar{Y}] = \mathbb{E}_\lambda\Bigg( \frac{1}{n} \sum_{i=1}^n Y_i \Bigg) = \frac{1}{n} \sum_{i=1}^n \mathbb{E}_\lambda[Y_i] = \frac{1}{n} \sum_{i=1}^n \lambda = \frac{1}{n}n\lambda = \lambda.
+$$
+Täten parametring $\lambda$ SU-estimaattori $\hat{\lambda}(\textbf{Y})$ on harhaton, sillä sen odotusarvo on itse estimoitava parametri $\lambda$.
+\item[(b)] On annettu:
+$$
+\text{mse}_\lambda(\hat{\lambda}(\textbf{Y})) = \text{Var}(\hat{\lambda}(\textbf{Y})) + (\text{bias}_\lambda(\hat{\lambda}(\textbf{Y})))^2.
+$$
+Harhattoman SU-estimaattorin harha on luonnollisesti 0, sillä
+$$
+\text{bias}_\lambda(\hat{\lambda}(\textbf{Y})) = \mathbb{E}_\lambda[\hat{\lambda(\textbf{Y})}] - \lambda = \lambda - \lambda = 0.
+$$
+Täten parametrin $\lambda$ estimaattorin $\hat{\lambda} = \bar{Y}$ keskineliövirheeksi saadaan riippumattomuuden nojalla
+$$
+\begin{aligned}
+\text{mse}_\lambda(\hat{\lambda}(\textbf{Y})) &= \text{Var}_\lambda(\hat{\lambda}(\textbf{Y})) \\
+    &= \text{Var}_\lambda(\bar{Y}) \\
+    &= \text{Var}_\lambda\Bigg( \frac{1}{n} \sum_{i=1}^n Y_i \Bigg) \\
+    &= \frac{1}{n^2} \text{Var}_\lambda\Bigg( \sum_{i = 1}^n Y_i \Bigg) \\
+    &= \frac{1}{n^2} \sum_{i=1}^n \text{Var}_\lambda(Y_i) \\
+    &= \frac{1}{n^2} \sum_{i=1}^n \lambda \\
+    &= \frac{1}{n^n}n\lambda \\
+    &= \frac{1}{n}\lambda.
+\end{aligned}
+$$
 \end{enumerate}
 \end{enumerate}
 \end{document}
