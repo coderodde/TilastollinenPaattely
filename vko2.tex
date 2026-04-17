@@ -100,7 +100,55 @@ $$
 \end{aligned}
 $$
 \end{enumerate}
-\item[4.] c
-\item[5.] d
+\item[4.] 
+\begin{enumerate}
+\item[(a)] Viikon 1 tehtävästä 1:
+$$
+f(\textbf{y}; \lambda) = \exp(-n\lambda) \frac{\lambda^{n\bar{y}}}{\prod_{i = 1}^n y_i!},
+$$
+jossa 
+$$
+\bar{y} = \frac{1}{n	} \sum_{i = 1}^n y_i.
+$$
+Nyt, 
+$$
+L(\lambda) = \kappa(\textbf{y}) f(\textbf{y}; \lambda),
+$$
+jossa $\kappa(\textbf{y}) > 0$ saa riippua aineistosta $\textbf{y}$, mutta ei saa riippua uskottavuusfunktion argumentista $\lambda$. Kun valitaan $$
+\kappa(\textbf{y}) = \prod_{i = 1}^n y_i!,
+$$
+niin
+$$
+L(\lambda; \textbf{y}) = \kappa(\textbf{y})f(\textbf{y}; \lambda) = \Bigg( \prod_{i=1}^n y_i! \Bigg) \exp(-n\lambda) \frac{\lambda^{n\bar{y}}}{\prod_{i=1}^n y_i!} = \exp(-n\lambda) \lambda^{n\bar{y}}.
+$$
+Näin mallin erääksi uskottavuusfunktiosta saadaan
+$$
+L(\lambda; \textbf{y}) = \exp(-n\lambda) \lambda^{n\bar{y}},
+$$
+jonka logaritmi on log-uskottavuusfunktio
+$$
+\ell(\lambda; \textbf{y}) = -n\lambda + n\bar{y} \log \lambda.
+$$
+\item[(b)] Log-uskottavuusfunktion derivaatta on
+$$
+\ell^\prime(\lambda) = -n + n\bar{y}\frac{1}{\lambda} = \frac{n}{\lambda} (-\lambda + \bar{y}).
+$$
+Huomataan, että
+$$
+\ell^\prime = 0 \\
+-\lambda + \bar{y} = 0 \\
+\lambda = \bar{y}.
+$$
+Log-uskottavuusfunktion toinen derivaatta on
+$$
+\ell^{\prime \prime}(\lambda; \textbf{y}) = -\frac{n\bar{y}}{\lambda} < 0 \text{ kaikilla } \lambda > 0,
+$$
+joten piste $\bar{y}$ on uskottavuusfunktion globaali maksimikohta, sillä tästä seuraa, että ensimmäinen derivaatta vaihtaa merkkiään tarkalleen kerran ja toisen derivaatan ollessa negatiivinen lokaalissa ääriarvokohdassa kyseinen kohta on myös lokaali maksimi.
+\end{enumerate}
+\item[5.] 
+\begin{enumerate}
+\item[(a)]
+\item[(b)]
+\end{enumerate}
 \end{enumerate}
 \end{document}
