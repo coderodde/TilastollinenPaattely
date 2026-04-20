@@ -1,0 +1,46 @@
+\documentclass[12pt]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\newcommand{\E}{\mathbb{E}}
+
+\title{Tehtävät 3}
+
+\begin{document}
+\maketitle
+\begin{enumerate}
+\item[1.] Vihjeen mukaan monisteen esityksess (4.8) 
+$$
+\sum_{i=1}^n (y_i - \mu)^2 = \sum_{i=1}^n (y_i - \bar{y})^2 + n(\bar{y} - \mu)^2
+$$
+voidaan luvut $y_i$ korvata satunnaismuuttujilla $Y_i^2$, jolloin saadaan identiteetti
+$$
+\sum_{i=1}^n (Y_i - \mu)^2 = \sum_{i=1}^n (Y_i - \bar{Y})^2 + n(\bar{Y} - \mu)^2.
+$$
+Kun tämn jakaa puolittain luvulla $n$ ja järjestele uudestaan
+$$
+\begin{aligned}
+\sum_{i=1}^n (Y_i - \mu)^2 &= \sum_{i=1}^n (Y_i - \bar{Y})^2 + n(\bar{Y} - \mu)^2 \\
+\Leftrightarrow \frac{1}{n} \sum_{i=1}^n (Y_i - \mu)^2 &= \frac{1}{n} \sum_{i=1}^n (Y_i - \bar{Y})^2 + (\bar{Y} - \mu)^2 \\
+\Leftrightarrow \hat{\sigma^2}(\textbf{Y}) = \frac{1}{n}\sum_{i=1}^n (Y_i - \bar{Y})^2 &= \frac{1}{n} \sum_{i=1}^n \sum_{i=1}^n(Y_i - \mu)^2 - (\bar{Y} - \mu)^2
+\end{aligned}
+$$
+Tästä identiteetistä seuraa, että vasemman puolen odotusarvo on sama kuin oikein puolen odotusarvo, joten kysytty odotusarvo on 
+$$
+\begin{aligned}
+\E_\theta[\hat{\sigma^2}(\textbf{Y})] &= \E_\theta\Bigg( \frac{1}{n}\sum_{i=1}^n(Y_i - \mu)^2 - (\bar{Y} - \mu)^2 \Bigg) \\
+    &= \frac{1}{n}\sum_{i=1}^n\E_\theta[(Y_i - \mu)^2] - \E_\theta[(\bar{Y} - \mu)^2]
+\end{aligned}
+$$
+Viimeinen yhtäsuuruus seurasi odotusarvon lineaarisuudesta. Koska $\mu$ on satunnaismuuttujien $Y_i$ odotusarvo, niin $\E_\theta[(Y_i - \mu)^2] = \text{Var}_\theta(Y_i) = \sigma^2$. Vastaavasti tiedetään, että $\mu$ on myös odotusarvon $\mu$ SU-estimaattorin $\bar{Y}$ odotusarvo, joten myös $\E_\theta[(\bar{Y} - \mu)^2] = \text{Var}_\theta(\bar{Y})$. Aiemmin osoitettiin SU-estimaattorin $\bar{Y}$ otantajakauma joka kertoo, että tämä varianssi on $\text{Var}_\theta(\bar{Y}) = \sigma^2 / n.$
+
+Siispä,
+$$
+f
+$$
+\item[2.]
+\item[3.]
+\item[4.]
+\item[5.]
+\end{enumerate}
+\end{document}
